@@ -1,32 +1,25 @@
 import { useEffect } from "react";
 import { navigate, routes } from '@redwoodjs/router'
+import {useAuth} from '@redwoodjs/auth'
 
 const HomePage = () => {
-  const netlifyIdentity = window.netlifyIdentity;
+  const { loading, authenticated, login } = useAuth()
 
   useEffect(() => {
-    netlifyIdentity.on('login', (_user) => {
-      navigate(routes.products())
-    });
-    if(netlifyIdentity.currentUser() != null){
+    if(!loading && authenticated){
       navigate(routes.products())
     }
-  })
+  }, [loading, authenticated])
 
-  const openLoginModal = () => {
-
-
-    if(netlifyIdentity)
-      netlifyIdentity.open();
-    else
-      console.log('netlifyIdentity not defined')
+  if (loading) {
+    return <div></div>
   }
 
   return (
     <div>
       <h1>HomePage</h1>
       <p>Find me in ./web/src/pages/HomePage/HomePage.js</p>
-      <button onClick={openLoginModal}>Login</button>
+      <button onClick={login}>Login</button>
     </div>
   )
 }

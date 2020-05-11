@@ -6,7 +6,7 @@
       "web"
     ]
   },
-  "devDependencies": {
+  "dependencies": {
     "@redwoodjs/core": "^0.6.0",
     "netlify-plugin-prisma-provider": "^0.3.0"
   },
