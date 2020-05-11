@@ -19,6 +19,7 @@ const CSS = {
 
 const ProductForm = (props) => {
   const onSubmit = (data) => {
+    data.price = parseFloat(data.price)
     props.onSave(data, props?.product?.id)
   }
 
@@ -53,6 +54,7 @@ const ProductForm = (props) => {
         />
         <TextField
           name="price"
+          type="number"
           defaultValue={props.product?.price}
           className={CSS.input}
           errorClassName={CSS.inputError}
