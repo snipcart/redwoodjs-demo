@@ -1,6 +1,23 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes, navigate } from '@redwoodjs/router'
+import { useEffect, useState } from 'react'
 
 const ProductsLayout = (props) => {
+
+  const [checkedCurrentUser, setCheckedCurrentUser] = useState(false)
+
+  useEffect(() => {
+    const netlifyIdentity = window.netlifyIdentity;
+    console.log(netlifyIdentity.currentUser())
+    if(netlifyIdentity.currentUser() == null){
+      navigate(routes.home())
+    }
+    setCheckedCurrentUser(true)
+  })
+
+  if(!checkedCurrentUser){
+    return (<div></div>)
+  }
+
   return (
     <div className="rw-scaffold">
       <div className="bg-white font-sans">
