@@ -16,10 +16,11 @@ const HomePage = () => {
   }
 
   return (
-    <div>
-      <h1>HomePage</h1>
-      <p>Find me in ./web/src/pages/HomePage/HomePage.js</p>
-      <button onClick={login}>Login</button>
+    <div className="login__wrapper d-flex align-items-center justify-content-center">
+      <div className="login">
+        <img src="/snipcart_logo.svg"/>
+        <div className="btn" onClick={login}>Login</div>
+      </div>
     </div>
   )
 }

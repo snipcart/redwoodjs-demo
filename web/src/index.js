@@ -11,7 +11,6 @@ import Routes from 'src/Routes'
 
 import './scaffold.css'
 import './index.css'
-import { useAuth } from '@redwoodjs/auth'
 import App from './app'
 
 ReactDOM.render(
@@ -20,9 +19,6 @@ ReactDOM.render(
        <App>
          <Routes/>
          </App>
-       {/* <RedwoodProvider useAuth={useAuth}>
-         <Routes/>
-       </RedwoodProvider> */}
     </AuthProvider>
   </FatalErrorBoundary>,
   document.getElementById('redwood-app')
