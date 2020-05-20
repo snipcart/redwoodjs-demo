@@ -11,7 +11,6 @@ import Routes from 'src/Routes'
 
 import './scaffold.css'
 import './index.css'
-// import App from './app'
 
 ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
