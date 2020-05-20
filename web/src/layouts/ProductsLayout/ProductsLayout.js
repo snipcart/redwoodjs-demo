@@ -2,11 +2,7 @@ import { Link, routes, navigate } from '@redwoodjs/router'
 import {useAuth} from '@redwoodjs/auth'
 
 const ProductsLayout = (props) => {
-  const {authenticated, loading, logout} = useAuth()
-
-  if(!loading && !authenticated){
-    navigate(routes.home())
-  }
+  const {logout} = useAuth()
 
   return (
     <div className="rw-scaffold">

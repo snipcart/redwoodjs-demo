@@ -294,3 +294,10 @@ export const handler = async () => {
 }
 ```
 Netlify will create an AWS Lambda with this code that will return all the products. It will allow Snipcart to fetch from this endpoint and add the products to its database.
+
+## Closing thoughts
+Since RedwoodJs is still in the early development phase, it lacked documentation. Also, it doesn't support typescript yet.  Because of the lack of documentation, the demo took me a bit over a day to build.
+
+Where RedwoodJS shines is on the scaffolding part. Adding a table to the database and creating the pages for simple CRUD operations took mere minutes to do.
+
+Overall I think RedwoodJS has excellent potential, but I don't think it's there yet. It is a great tool to scaffold a project rapidly without needing to build the API.

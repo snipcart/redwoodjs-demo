@@ -11,14 +11,14 @@ import Routes from 'src/Routes'
 
 import './scaffold.css'
 import './index.css'
-import App from './app'
+// import App from './app'
 
 ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
      <AuthProvider client={netlifyIdentity} type="netlify">
-       <App>
+       <RedwoodProvider>
          <Routes/>
-         </App>
+         </RedwoodProvider>
     </AuthProvider>
   </FatalErrorBoundary>,
   document.getElementById('redwood-app')
